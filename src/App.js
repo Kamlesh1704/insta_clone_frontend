@@ -14,10 +14,12 @@ import Modal from './components/Modal';
 import UserProfile from './components/UserProfile';
 import MyFollowingPost from './screens/MyFollowingPost';
 import { GoogleOAuthProvider } from '@react-oauth/google';
+import SearchUser from './screens/SearchUser';
 
 function App() {
   const [userLogin, setUserLogin] = useState(false)
   const [isModal, setModal] = useState(false)
+
   return (
     <BrowserRouter>
       <div className="App">
@@ -32,6 +34,7 @@ function App() {
               <Route path='/createPost' element={<CreatePost />} />
               <Route path='/profile/:userid' element={<UserProfile />} />
               <Route path='/followingpost' element={<MyFollowingPost />} />
+              <Route path='/searchuser' element={<SearchUser />} />
             </Routes>
             <ToastContainer />
             { isModal && <Modal></Modal> }

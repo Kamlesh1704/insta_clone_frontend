@@ -1,5 +1,6 @@
-import React, {useContext} from 'react';
+import React, {useContext, useState} from 'react';
 import logo from '../img/logo.png'
+import { LuSearch } from "react-icons/lu";
 import '../css/Navbar.css'
 import { Link } from 'react-router-dom';
 import { LoginContext } from '../context/LoginContext';
@@ -12,15 +13,36 @@ export default function Navbar({userLogin}) {
     if(userLogin || token){
       return [
       <>
+      <div className='nav-links'>
+          <LuSearch />
+          <Link to="/searchuser">
+          <li className='searchh'>Search</li>
+          </Link>
+        </div>
+        <div className='nav-links'>
+          <span class="material-symbols-outlined">
+        account_circle
+        </span>
         <Link to="/profile">
           <li>Profile</li>
         </Link>
+        </div>
+        <div className='nav-links'>
+        <span class="material-symbols-outlined">
+        add_box
+        </span>
         <Link to="/createPost">
           <li>Create Post</li>
         </Link>
+        </div>
+        <div className='nav-links'>
+        <span class="material-symbols-outlined">
+        explore
+        </span>
         <Link to="followingpost">
           <li>My Following</li>
         </Link>
+        </div>
         <Link to={""}>
           <button className="primaryBtn" onClick={() => setModal(true)}>
             Log Out
@@ -49,6 +71,9 @@ const loginStatusMobile = () => {
             home
             </span>
           </li>
+      </Link>
+      <Link to="/searchuser">
+        <LuSearch className='nav-links' style={{fontSize:"23px"}}/>
       </Link>
       <Link to="/profile">
         <li><span class="material-symbols-outlined">

@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState} from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { toast } from 'react-toastify';
 import { FaBookmark, FaRegBookmark } from "react-icons/fa";
@@ -8,7 +8,7 @@ export default function Home() {
   var defultPic = 'https://img.freepik.com/free-vector/user-circles-set_78370-4704.jpg?size=626&ext=jpg';
   const [data, setData] = useState([]);
   const [comment, setComment] = useState("");
-  const [show, setShow] = useState(false);
+  const [show, setShow] = useState(false);                    
   const [item, setItem] = useState([]);
   const navigate = useNavigate();
   let limit = 10;
